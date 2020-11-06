@@ -22,4 +22,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/admin','AdminController@index')->name('admin');
+Route::get('/admin','AdminController@index');
+
+Route::get('/admin/addAdult','AdminController@addCat');
+
+Route::post('/admin/addAdult/prova','AdminController@store')->name('store');
+
+Route::get('/admin/ConsultAdultCats','AdminController@showCats');
+
+
