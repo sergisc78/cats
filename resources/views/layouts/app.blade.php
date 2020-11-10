@@ -133,7 +133,7 @@
             Options
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Adult cats</a>
+            <a class="dropdown-item" href="{{url('/users/adultCats')}}">Adult cats</a>
             <a class="dropdown-item" href="#">Kittens</a>
             <a class="dropdown-item" href="#">Special cases</a>
         </div><br><br>

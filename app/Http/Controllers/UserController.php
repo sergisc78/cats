@@ -6,27 +6,22 @@ use Illuminate\Http\Request;
 
 use App\addAdultCat;
 
-class AdminController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function showAdultCats()
     {
         //
 
-
-        return view('admin.index');
-    }
-
-    public function showCats()
-    {
-
         $cats = AddAdultCat::all();
 
-        return view('admin.ConsultAdultcats', compact('cats'));
+        return view('users.adultCats', compact('cats'));
+
+
     }
 
     /**
@@ -34,15 +29,9 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function addCat()
+    public function create()
     {
         //
-        return view('admin.addAdult');
-    }
-
-    public function updateCat(){
-        
-        return view ('admin.viewAdultCat');
     }
 
     /**
@@ -53,26 +42,8 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        // PUJAR FOTO A LA BBDD
-
-
-        $input = $request->all();
-
-        $file = $request->file('image');
-
-        if ($file) {
-
-            $filename = $file->getClientOriginalName(); // NOM DE LA FOTO
-
-            $file->move('images', $filename);
-
-            $input['image'] = $filename;
-        }
-
-
-        addAdultCat::create($input);
+        //
     }
-
 
     /**
      * Display the specified resource.

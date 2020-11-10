@@ -20,7 +20,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+// ADMIN ROUTES
 
 Route::get('/admin','AdminController@index');
 
@@ -29,5 +32,13 @@ Route::get('/admin/addAdult','AdminController@addCat');
 Route::post('/admin/addAdult/prova','AdminController@store')->name('store');
 
 Route::get('/admin/ConsultAdultCats','AdminController@showCats');
+
+
+
+// USER ROUTES
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/users/adultCats','UserController@showAdultCats');
 
 
