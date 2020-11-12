@@ -8,6 +8,7 @@ use App\addAdultCat;
 
 class AdminController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -15,11 +16,14 @@ class AdminController extends Controller
      */
     public function index()
     {
-        //
-
-
         return view('admin.index');
     }
+
+
+
+    /**
+     * SHOW ALL CATS IN DATABASE
+     */
 
     public function showCats()
     {
@@ -28,6 +32,8 @@ class AdminController extends Controller
 
         return view('admin.ConsultAdultcats', compact('cats'));
     }
+
+    
 
     /**
      * Show the form for creating a new resource.
@@ -40,10 +46,7 @@ class AdminController extends Controller
         return view('admin.addAdult');
     }
 
-    public function updateCat(){
-        
-        return view ('admin.viewAdultCat');
-    }
+   
 
     /**
      * Store a newly created resource in storage.
@@ -75,7 +78,7 @@ class AdminController extends Controller
 
 
     /**
-     * Display the specified resource.
+     * SHOW SELECTED CAT.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -83,6 +86,10 @@ class AdminController extends Controller
     public function show($id)
     {
         //
+
+        $cats = AddAdultCat::find($id);
+
+        return view('admin.adult', compact('cats'));
     }
 
     /**

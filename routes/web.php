@@ -33,6 +33,8 @@ Route::post('/admin/addAdult/prova','AdminController@store')->name('store');
 
 Route::get('/admin/ConsultAdultCats','AdminController@showCats');
 
+Route::get('/admin/{id}','AdminController@show');
+
 
 
 // USER ROUTES
@@ -40,5 +42,7 @@ Route::get('/admin/ConsultAdultCats','AdminController@showCats');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/users/adultCats','UserController@showAdultCats');
+
+Route::get('/users/{id}','UserController@show');
 
 

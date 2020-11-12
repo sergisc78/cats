@@ -9,7 +9,7 @@ use App\addAdultCat;
 class UserController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * SHOW ALL CATS IN DATABASE
      *
      * @return \Illuminate\Http\Response
      */
@@ -23,6 +23,25 @@ class UserController extends Controller
 
 
     }
+
+    /**
+     * SHOW SELECTED CAT
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+
+        $cats=AddAdultCat::find($id);
+
+        return view('users.adult', compact('cats'));
+       
+    }
+
+
+   
 
     /**
      * Show the form for creating a new resource.
@@ -45,17 +64,9 @@ class UserController extends Controller
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
+
+    
     /**
      * Show the form for editing the specified resource.
      *

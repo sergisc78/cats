@@ -45,7 +45,7 @@
             <div class="col adult">Name : {{$cat->catName}}</div>
             <div class="col adult"> Age : {{$cat->age}}</div>
             <div class="col adult">Sex : {{$cat->sex}}</div><br>
-            <a href="http://" class="btn btn-info btn-sm">View Cat</a><br>
+            <a href="{{url('/users', $cat->id)}}" class="btn btn-info btn-sm">View {{$cat->catName}}</a><br>
 
         </div>
 
